@@ -2,6 +2,7 @@
 
 var context = SP.ClientContext.get_current();
 var user = context.get_web().get_currentUser();
+var searchurl = 'URL GOES HERE';
 
 (function () {
 	
@@ -12,7 +13,7 @@ var user = context.get_web().get_currentUser();
 	
 	function search(q){
 		$.ajax({
-		  url: 'https://cv.altran.no/solr/collection1/select',
+		  url: searchurl,
 		  data: {'wt':'json', 'q':q},
 		  success: function(data) { 
 			  renderResults(data);
